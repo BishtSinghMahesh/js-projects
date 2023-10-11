@@ -97,3 +97,13 @@ slice() method can take two arguments like slice(1, 3).
 
 The method then selects elements from the start argument, and up to (but not including) the end argument
 */
+
+// ***************** SORT() an numeric array using a function *******************8
+
+const arr1 = [7,5,1,3,4,6,8,2];
+let sort = arr1.sort(function(a,b){return a - b});
+
+console.log(sort);
+
+// Using Math.max() :-"Math.max.apply" on an Array to find Maximum value in an array
+// Using Math.min() :-"Math.min.apply" on an Array to find the minimum value in an array
