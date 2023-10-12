@@ -1,8 +1,9 @@
 // can define ojects in two ways, 1. Literal ,2. Constructor
 
-// "Object.create" constructor method and Singleton way
+// const obj1 = Object.create" constructor method creates Singleton way
 
-// object literal
+// object literal ; const obj1 = {key: value}
+
 // object stores values in key : value pairs
 
 // declare Symbol
@@ -55,3 +56,49 @@ obj.greetingTwo = function () {
 console.log(obj.greeting); // output:- [Function (anonymous)]  function reference
 console.log(obj.greeting()); // output:- Hello Human
 console.log(obj.greetingTwo()); // output:- Using this keyword inside object function, Mahesh Singh
+
+
+// ******************* object second part *************************
+ 
+const tinderUser = new Object();  // declare object 1st way Singleton Object
+
+const tinderUser2 = {}; // declare object 2nd way non-Singleton Object
+
+tinderUser2.id = 123;
+tinderUser2.name = "tom";
+tinderUser2.isLoggedIn = false;
+
+
+// object inside object
+
+const gamePlayer = {
+  name: "Player",
+  rank: "vetran",
+  badges: {
+    silver: 4,
+    gold: 3,
+    bronze: 4,
+    diamond: 6
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
