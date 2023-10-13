@@ -82,6 +82,28 @@ const gamePlayer = {
   }
 }
 
+// Access objects inside object by using consecutive dot(.) notation 
+ console.log(gamePlayer.badges.gold);
+
+
+ // Merge Objects 
+
+const obj1 = {1: "a", 2: "b"};
+const obj2 = {3: "c", 4: "d"};
+
+const obj3 = {obj1 , obj2};
+console.log(obj3);
+ // This will result as object having to objects we dont want that 
+ // Output :- { obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'c', '4': 'd' } }
+
+ // Correct way to join objects is to use (assign()) :- syntax, "Object.assign({}, obj1, obj2)""
+  
+ const obj4 = Object.assign({}, obj1, obj2);
+
+
+
+
+
 
 
 
