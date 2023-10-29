@@ -87,7 +87,7 @@ The rest of the parameters are omitted. No new elements will be added.
 slice() method slices out a piece of an array into a new array
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 const citrus = fruits.slice(1);
-consoole.log(citrus)  , Output :- "Orange", "Lemon", "Apple", "Mango"
+console.log(citrus)  , Output :- "Orange", "Lemon", "Apple", "Mango"
 
 slice() method creates a new array.
 
