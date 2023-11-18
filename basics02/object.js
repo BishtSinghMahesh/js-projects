@@ -182,10 +182,50 @@ console.log(CN);
 ]
 
 
+// ***************************** Arrow Functions and THIS *************************
+
+// this use to refer current context 
+// use THIS keyword as in welcomeUser function (this.UserName) is used instead of hard code like (UserName)
+ const user = {
+  UserName: "Mahesh",
+  Contact: 4444,
+
+  welcomeUser : function() {
+ console.log(`${this.UserName}, Welcome to the website`)
+ console.log(this); // will print current whole object
+  }
+ }
+
+ user.welcomeUser();
 
 
+ // can also change the key values
+ user.UserName = "Mahi"
+ user.welcomeUser();
 
 
+console.log(this); // it will indicate to the global object which is an empty object {}
+ // *important
+ // " THIS in browser the global object is Window, that's why you can use window functions like 
+//  click, form submit etc "
 
+function test(){
+  console.log(this);
+}
+test() // this will return lot of things
+// so using THIS inside a function will return many things
 
+function test(){
+  username = "Mahesh"
+  console.log(this.username);
+}
+ /* it will show undefined , because you can't use this inside a normal function it has to 
+  be inside a Object or object Functions */
+ 
+//  **************** Arrow Functions *******************
+const ArrowFun = (a,b) => {
+  return a + b;
+} 
 
+// If using {} curly backets have to use return keyword 
+// If not using {} curly barckets then you can use () parenthesis or not omtting return keyword
