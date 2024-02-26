@@ -59,3 +59,23 @@ for (const [key, value] of map) {
 
 
 
+// for of loop on Object
+//  objects are not iteratable in this way
+
+const myObject = {
+  'game1': 'NFS',
+  'game2': 'Spiderman'
+}
+
+// for (const [key, value] of myObject) {
+//   console.log(key, ':-' , value);
+// }
+//  it is not iterable
+
+// ************ For In Loop ************
+
+// tpo iterate in Objects use "for in loop"
+
+for (const key in myObject) {
+  console.log(`${key} games ${myObject[key]}`);
+}
