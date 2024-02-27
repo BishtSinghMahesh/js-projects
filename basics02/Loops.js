@@ -72,6 +72,12 @@ const myObject = {
 // }
 //  it is not iterable
 
+
+
+
+
+
+
 // ************ For In Loop ************
 
 // tpo iterate in Objects use "for in loop"
