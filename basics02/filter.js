@@ -99,10 +99,11 @@ console.log(chainmap);
 
 //  ****************************** Reduce ***************************
 
+
+//  reduce is kind of loop with accumulator and current value and initial value 
 const arr = [1 ,2 ,3]
 
 const reTotal = arr.reduce(
- (acc, curval) => acc + curval 
- ,0
-)
+ (acc, curval) => acc + curval, 0 )
  
+console.log(reTotal);
