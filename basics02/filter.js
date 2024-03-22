@@ -101,6 +101,8 @@ console.log(chainmap);
 
 
 //  reduce is kind of loop with accumulator and current value and initial value 
+// accumulator stors the previous values and 0 is initial value here initial value can be anyvalue
+// starts with initial value 0 here then (acc + currval)    example :-   0 + 1 = 1, 1 + 2 = 3,  3 + 3 = 6. 
 const arr = [1 ,2 ,3]
 
 const reTotal = arr.reduce(
