@@ -109,3 +109,4 @@ const reTotal = arr.reduce(
  (acc, curval) => acc + curval, 0 )
  
 console.log(reTotal);
+
