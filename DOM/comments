@@ -1,0 +1,145 @@
+to change elements in web use selectors selecting by Id and setting it to <h1>
+
+// get Elemenet by ID
+document.getElementsById("firstHeading").innerHTML = "<h1>Javascript Developed by Brendan Eich</h1>"
+document.getElementsById("title").id   , would show the id which is "title"
+
+// get the class
+to get the class, use document.getElementsById("title").className 
+use "className" not "class" to get the class
+
+
+//JSX
+when you write HTML inside Javascript in React it is called JSX
+
+// get attribute
+to get the Attributes 
+document.getElementsById("title").getAttribute("class")
+document.getElementsById("title").getAttribute("id")
+
+
+// set attribute
+to SET Attribute
+it sets and overwrite the existing value
+you can set more values to the class like 'test', 'heading'
+document.getElementsById("title").setAttribute('class', 'test')
+
+
+
+
+
+// Important Add Content
+
+title.textContent
+title.innerHTML
+title.innerText
+
+Difference between these three
+*.textContent shows all the content even if it's not visible or display="none"
+*.innerText shows only text that is only visible
+* innerHTML shows all things with html tags
+
+// get elements by Class Name by using className
+  document.getElementByClassName("name of class")
+
+
+// documnet.querySelector
+it selects the given query
+document.querySelector('h1')    it'll give you first "h1" tag
+
+
+// use "#" hash to select "ID"  and use "." dot select "class"
+
+// querySelector
+document.querySelector('input[type="password"]')
+
+// select values
+ document.querySelector('ul')  , store it to a variable 
+ const myUl = document.querySelector('ul')
+ 
+ myUl.querySelector('li')  , it'll show the list items inside unordered list
+
+ const turnBlue = muUl.querySelecter('li')
+
+ turnBlue.style.backgroundColor = "blue"
+ turnBlue.style.padding = "20px"
+
+
+ // change color of any text or tag
+ const myUl =document.querySelector('ul')
+ const liColor = myUl.querySelector('li')
+ liColor.style.backgroundColor = "blue"
+ 
+ 
+ // change InnerText of the page
+ const liColor = myUl.querySelector('li')
+ liColor.innerText = "seven"
+
+
+ // *** important 
+ nodeList and HTML list are not pure array
+ to check this array has forEach and also Map but in nodeList and HTML list they are not pure array
+ 
+
+// get to node list elemnet
+const list = document.querySelectorAll('li')
+
+NodeList(3) [li, li, li]
+0: li
+1: li
+2: li
+length: 3
+
+
+// traverse in node list like an array
+list[1].style.color = "blue" 
+
+
+
+// select all elements in node list 
+// use "forEach(call Back)"  in node list
+
+// list.forEach( (l)=>{
+            // with Arrow function () => {}
+   l.style.backgroundColor = "blue" })
+               
+            // with normal function () {} 
+// list.forEach(function (l) { 
+  l.style.backgroundColor = "blue "} )            
+
+
+
+  // MAP function is available in array, not in node list 
+  // to use MAP function in node list, first convert node list to array
+
+
+  // HTML collection 
+  const tempList = document.getElementsByClassName('list-items') 
+ HTMLCollection(3) [li.list-items, li.list-items, li.list-items]
+
+
+ // to traverse in HTML collections you need to convert HTML collection into Array with capital "A"
+    Array.from(tempList)
+
+
+
+
+/// ****************   Create new Element in DOM    **************************
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
