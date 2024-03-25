@@ -126,9 +126,11 @@ list[1].style.color = "blue"
 
 /// ****************   Create new Element in DOM    **************************
 
- 
-
-
+ // for loop in HTML collections 
+ // here parent.children is HTML collection
+ for (let i = 0; i < parent.children.length; i++){
+  console.log(parent.children[i].innerHTML);
+} 
 
 
 
