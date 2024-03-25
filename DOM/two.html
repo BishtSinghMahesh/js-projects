@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Element in DOM</title>
+</head>
+<body style="background-color: #212121; color:#fff">
+    <div class="parent">
+        <div class="day" >Monday <style = "display: hidden" > Hidden text</style></div>
+        <div class="day" >Tuesday <style = "display: hidden"> Hidden text</style></div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>   
+    </div>
+    
+</body>
+<script>
+ const parent = document.querySelector('.parent')
+ console.log(parent);
+ console.log(parent.children);
+//  parent.children shows HTML collections its almost like Array
+
+console.log(parent.children[0]);
+// it'll show <div class="day">Monday</div>
+
+console.log(parent.children[0].innerHTML);
+// .innerHTML shows all things with html tags
+// it'll show         Monday 
+
+console.log(parent.children[0].innerText);
+// .innerText shows only text that is only visible
+
+console.log(parent.children[1].textContent);
+// .textContent shows all the content even if it's not visible or display="none"
+
+
+// loop in HTML collections in parent.children
+for (let i = 0; i < parent.children.length; i++){
+    console.log(parent.children[i].innerHTML);
+} 
+
+
+// can also access value by parent children relationship
+parent.children[2].style.color = "orange"
+
+
+           // moving parent to children 
+// access 1st element by using  .firstElementChild
+console.log(parent.firstElementChild);
+
+// access last element by using  .lastElementChild
+console.log(parent.lastElementChild);
+
+            
+
+          // moving children to parent
+//  using querySelector  which selects 1st element
+ console.log(document.querySelector('.day'));
+ // it'll show first element of the parent
+
+ const dayOne = document.querySelector('.day');
+
+ // move to parent using child 
+ console.log(dayOne.parentElement); 
+
+ // move to nextElementSibling 
+ console.log(dayOne.nextElementSibling);
+
+
+
+
+           // *********** NODES ***********
+                  // childNodes html document is like a node tree
+ console.log("NODES: ",  parent.childNodes);
+
+
+
+</script>
+</html>
