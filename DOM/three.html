@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: aqua;">
+    
+</body>
+<script>
+    // creating a div element 
+    const mydiv = document.createElement('div')
+    const h1 = document.createElement('h1')
+    console.log(mydiv);
+
+    // setting className to div element
+    mydiv.className = "main"
+    mydiv.id = Math.round(Math.random()*10 + 4);
+
+    // set attribute 
+    mydiv.setAttribute("title", "created title")
+
+    mydiv.style.backgroundColor = "red"
+    mydiv.style.padding = "15px"
+
+
+     //  created element to the document file 
+    mydiv.innerText = "Javascript code"    // this overwrrites the value, it takes value the overwrites it
+
+    //   also creates text node then append it 
+    const addText = document.createTextNode("Javascript code")
+    mydiv.appendChild(addText);
+
+
+    // last append created element to the document body
+    document.body.appendChild(mydiv);
+    
+</script>
+</html>
