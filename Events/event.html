@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="color: #fff; background-color: #000;">
+    <h2>Images</h2>
+    <div>
+        <ul id="images">
+        <li><img src="https://i.pinimg.com/564x/1b/08/cb/1b08cb88f6c89c21dc7c5dea0d1f9603.jpg" width="90px" id="cup" alt="photoshop"></li>
+        <li><img src="https://i.pinimg.com/originals/5c/0e/8b/5c0e8b60189700732bd5e07f049cb423.jpg" width="90px" id="ufc" alt=""></li>
+        <li><img src="https://i.pinimg.com/originals/34/80/2e/34802e4ec093cce4e7c3113caa2eb032.jpg" width="70px" id="turtle" alt=""></li>
+        <li><img src="https://i.pinimg.com/originals/b3/1d/46/b31d465844ce35303cc72454969a4109.png" width="150px" id="bike" alt=""></li>
+        <li><a style="color: aliceblue; " href="https://www.google.com/" id="google">Google</a></li>
+    </ul>
+    </div>
+
+    <div>
+        <ul id="remove-img">
+            <li><img src="https://i.pinimg.com/originals/e1/7c/bc/e17cbc3f5dfa33e011f781ca50a5f4a1.png" width="100px" id="REbike" alt="bike"></li>
+            <li><img src="https://i.pinimg.com/originals/c1/cc/9f/c1cc9f612600636205e33aa0aa87af47.jpg" width="100px" id="clock" alt=""></li>
+            <li><img src="https://i.pinimg.com/originals/e9/5f/52/e95f520663351fb5fc2bc2f825a71f92.jpg" width="100px" id="naruto" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://www.youtube.com/" id="youtube">Youtube</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // Events run sequently in Javascript
+    // using events directly in html is not good practise
+    
+    // don't use Onclick but rather use Event Listners 
+    document.getElementById('ufc').onclick = function(){
+        alert("Clicked on UFC")
+    }
+   
+
+    // used to use .on in jQuery
+    // use Event Listener (.addEventListener) such as click, hover, drag, drop  your mouse or keyboard events
+    document.getElementById('cup').addEventListener('click', function(){
+     alert("Clicked on Cup image")
+    }, false)
+
+
+
+    /*
+      PointerEvent which is an object, we get lots of elements inside it
+       Few *important events 
+            type, timestamp, defaultPrevented
+            target, toElement , srcElement, currentTarget
+            clientX, clientY, screenX, screenY
+            altkey, ctrlkey, shiftkey, keycode     
+   */
+
+    document.getElementById('bike').addEventListener('click', function(e){
+        console.log(e);
+    }, false)
+    
+
+
+  
+    /* 
+     # Event Propagation 
+       1* Event Bubbling 
+       2* Event Capturing
+    */
+
+
+          /*
+           1*This is Event Propagation and this one is "Event Bubbling"
+      here if we click in any elements inside "images" id we get 'Clicked inside any li in Ul' 
+      if the li has another eventListener then first it's own eventListner gets called after it calls the upper eventListner from it here it's for "images"
+           */
+
+          //  to stop Bubbling up Event use e.stopPropagation()    
+         // it'll only show (Clicked on turtle) when used e.stopPropagation    
+
+
+    document.getElementById('turtle').addEventListener('click', function(e){
+        console.log('Clicked on turtle');
+        // e.stopPropagation();
+    }, false)
+
+    document.getElementById('images').addEventListener('click', function(){
+        console.log('Clicked inside any li in Ul');
+    }, false)
+
+        //  output in this
+    // Clicked on turtle
+    // Clicked inside any li in Ul
+
+
+    
+    /*
+    2* Event Capturing 
+    Its goes from up to down, first it'll capture upper event then capture events under it
+    
+
+    document.getElementById('turtle').addEventListener('click', function(e){
+        console.log('Clicked on turtle');
+    }, true)
+    
+    document.getElementById('images').addEventListener('click', function(){
+        console.log('Clicked inside any li in Ul');
+    }, true)
+    
+                    //output in this 
+                    Clicked inside any li in Ul
+                    Clicked on turtle
+    */
+
+
+
+
+    /*  #preventDefault() 
+    it's used to prevent the default behavior of the element 
+    here we are stoping the link to go to the site 
+    it's a method
+    */
+
+   
+   document.getElementById("google").addEventListener('click', function(e){
+       console.log('Prevented Default');
+
+       // you can stop event propagation by using "e.stopPropagation()"
+       //  e.stopPropagation();
+         e.preventDefault();
+    }, false)
+
+
+
+
+
+
+// *Remove Images or li when clicked 
+ document.querySelector('#remove-img').addEventListener('click', function(e){
+     
+    // 'e.target'  shows the event that gets targeted here it's img
+    //  'e.target.parentNode' gets you to the parent node which is 'li' here
+    console.log(e.target.parentNode);
+     // it'll show li
+
+    console.log(e.target.tagName);
+ // it'll show tagName like 'IMG' , 'LI'
+
+ 
+ let removeIt = e.target.parentNode;
+ 
+ if(e.target.tagName === 'IMG'){
+      removeIt.remove();
+ }
+
+       //   'removeChild(removeIt)' 
+// removeIt.parentNode.removeChild(removeIt)
+// removeIt[li] -> .parentNode[ul] -> .removeChild(removeIt)[li]
+//  removeIt.parentNode.removeChild(removeIt);
+
+ }, false)
+
+
+</script>
+</html>
