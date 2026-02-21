@@ -17,7 +17,7 @@ let repoCount = 40;
 // old syntax to console.log() string
 console.log(name + repoCount);
 
-//New method for console.log() string with backticks `` and ${} it is string intercolation
+//New method for console.log() string with backticks `` and ${} it is string interpolation
 // can use metods on the go like .toUppercase, .toLowercase or .length
 
 console.log(
